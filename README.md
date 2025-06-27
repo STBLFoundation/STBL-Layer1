@@ -1,5 +1,5 @@
 
-![Banner](.github/banner.jpg)
+![Banner](.github/stbl.jpg)
 
 ## Update: Edge v1.0.0 is here!  
 
