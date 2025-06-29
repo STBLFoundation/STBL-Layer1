@@ -63,12 +63,16 @@ Node ID              = 16Uiu2HAm2iJmhgypvRfX2cNJNggv8zaEBLT819Ez7bzFzmkHAA5B
 
 ### 📝 步骤五：生成 Genesis 文件
 
+> ⚠️ **注意：**  
+> `--validators` 参数后面的 `0xe851DbCF86aC139B5B2c5D868f7D053F480D3f6a:0x826d2b355ce32caaa388e3d05bb937487123714897fa5783686f8036bc3ac046f53b4ded29810b3fa234202a36e25eea`  
+> 需要填写**您自己电脑生成的 address 和 BLS Public Key**，请根据上一步输出替换为您的实际值！
+
 ```bash
 ./stbl genesis \
   --consensus ibft \
   --pos \
   --chain-id 100234 \
-  --validators 0xe851DbCF86aC139B5B2c5D868f7D053F480D3f6a:0x826d2b355ce32caaa388e3d05bb937487123714897fa5783686f8036bc3ac046f53b4ded29810b3fa234202a36e25eea \
+  --validators <你的address>:<你的BLS Public Key> \
   --premine 0x01E0075B970e10614fA3D2cdb8Eb10d368296673:10000000000000000000000000000 \
   --block-gas-limit 10000000 \
   --block-time 1s \
@@ -87,13 +91,30 @@ nohup ./stbl server \
   --grpc-address 0.0.0.0:10000 \
   --libp2p 0.0.0.0:1478 \
   --jsonrpc 0.0.0.0:10002 \
-  --nat 38.244.14.92 \
+  --nat <your ip address> \
   --seal > /dev/null 2>&1 &
 ```
 
 ---
 
 ### 💎 步骤七：质押代币，成为验证者
+
+> ⚠️ **质押前请先创建 `.env` 文件，并确保已设置所需参数。**
+
+#### `.env` 文件格式示例
+
+```env
+JSONRPC_URL=
+PRIVATE_KEYS=
+STAKING_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
+MAX_VALIDATOR_COUNT=500
+MIN_VALIDATOR_COUNT=1
+BLS_PUBLIC_KEY=
+```
+
+- `JSONRPC_URL`：填写RPC 地址  
+- `PRIVATE_KEYS`：填写 `test-chain/consensus` 目录下的验证者私钥  
+- 其余参数请根据实际情况填写
 
 #### 1. 拉取质押合约
 
@@ -116,14 +137,14 @@ npm run info
 
 ---
 
-## 📚 参考与支持
+## 📚 社区链接
 
-- [项目 Wiki](https://github.com/STBLFoundation/STBL-Layer1/wiki)
-- [提交 Issue](https://github.com/STBLFoundation/STBL-Layer1/issues)
-- [官方网站](https://stbl.foundation)
+- [Telegram](https://t.me/STBL_F)
+- [X](https://x.com/STBL_F)暂无
+- [Youtube](https://stbl.foundation)暂无
 
 ---
 
 <p align="center">
-  <b>欢迎加入 STBL 社区，共建去中心化金融新生态！</b>
+  <b>欢迎加入 STBL 社区，共建第一个去中心化的人民币支付网络！</b>
 </p>
