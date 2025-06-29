@@ -86,7 +86,7 @@ cp /path/to/official/genesis.json ./test-chain/genesis.json
   --premine 0x01E0075B970e10614fA3D2cdb8Eb10d368296673:10000000000000000000000000000 \
   --block-gas-limit 10000000 \
   --block-time 1s \
-  --bootnode /ip4/38.244.14.92/tcp/10001/p2p/16Uiu2HAm2iJmhgypvRfX2cNJNggv8zaEBLT819Ez7bzFzmkHAA5B \
+  --bootnode /ip4/38.244.14.92/tcp/1478/p2p/16Uiu2HAm2iJmhgypvRfX2cNJNggv8zaEBLT819Ez7bzFzmkHAA5B \
   --dir test-chain/genesis.json
 ```
 > `--validators` 参数请填写**您自己电脑生成的 address 和 BLS Public Key**，仅用于新链/测试链。
