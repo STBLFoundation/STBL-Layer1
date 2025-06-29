@@ -61,11 +61,21 @@ Node ID              = 16Uiu2HAm2iJmhgypvRfX2cNJNggv8zaEBLT819Ez7bzFzmkHAA5B
 
 ---
 
-### 📝 步骤五：生成 Genesis 文件
+### 📝 步骤五：获取 Genesis 文件
 
-> ⚠️ **注意：**  
-> `--validators` 参数后面的 `0xe851DbCF86aC139B5B2c5D868f7D053F480D3f6a:0x826d2b355ce32caaa388e3d05bb937487123714897fa5783686f8036bc3ac046f53b4ded29810b3fa234202a36e25eea`  
-> 需要填写**您自己电脑生成的 address 和 BLS Public Key**，请根据上一步输出替换为您的实际值！
+> ⚠️ **重要说明：**  
+> 对于启动 STBL Layer1 的全节点，**请务必直接复制官方 genesis 文件**，以保证与主网一致。  
+> 仅在**创建新链**或开发测试链时，才需要使用 `stbl genesis` 命令生成新的 genesis 文件。
+
+#### 推荐方式：复制官方 genesis 文件
+
+请从官方渠道或已部署节点获取 `genesis.json` 文件，并复制到 `test-chain/genesis.json` 路径下：
+
+```bash
+cp /path/to/official/genesis.json ./test-chain/genesis.json
+```
+
+#### 可选：生成新的 genesis 文件（仅用于新链/测试链）
 
 ```bash
 ./stbl genesis \
@@ -79,6 +89,7 @@ Node ID              = 16Uiu2HAm2iJmhgypvRfX2cNJNggv8zaEBLT819Ez7bzFzmkHAA5B
   --bootnode /ip4/38.244.14.92/tcp/10001/p2p/16Uiu2HAm2iJmhgypvRfX2cNJNggv8zaEBLT819Ez7bzFzmkHAA5B \
   --dir test-chain/genesis.json
 ```
+> `--validators` 参数请填写**您自己电脑生成的 address 和 BLS Public Key**，仅用于新链/测试链。
 
 ---
 
@@ -112,7 +123,7 @@ MIN_VALIDATOR_COUNT=1
 BLS_PUBLIC_KEY=
 ```
 
-- `JSONRPC_URL`：填写RPC 地址  
+- `JSONRPC_URL`：填写节点的 RPC 地址  
 - `PRIVATE_KEYS`：填写 `test-chain/consensus` 目录下的验证者私钥  
 - 其余参数请根据实际情况填写
 
@@ -140,8 +151,8 @@ npm run info
 ## 📚 社区链接
 
 - [Telegram](https://t.me/STBL_F)
-- [X](https://x.com/STBL_F)暂无
-- [Youtube](https://stbl.foundation)暂无
+- [X](https://x.com/STBL_F) 暂无
+- [Youtube](https://stbl.foundation) 暂无
 
 ---
 
